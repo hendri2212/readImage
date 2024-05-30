@@ -4,6 +4,13 @@
 
     // Get all image files from the directory
     $images = glob($directory . '*.{jpg,JPG,jpeg,JPEG,png,gif}', GLOB_BRACE);
+
+    // Cek session jika belum login
+    session_start();
+    if (!isset($_SESSION['phone'])) {
+        header('Location: login.php');
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -51,9 +58,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <img id="previewImage" src="" alt="Preview" class="img-fluid">
