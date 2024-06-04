@@ -48,7 +48,7 @@
                 <div class="frame">
                     <img src="<?= $image; ?>" alt="Image" class="img-thumbnail" onclick="showImageModal('<?= $image; ?>')">
                 </div>
-                <a href="code/download.php?file=<?php echo urlencode($image); ?>" class="btn btn-sm btn-info my-2">Download</a>
+                <a href="code/download.php?file=<?php echo urlencode('../'.$image); ?>" class="btn btn-sm btn-info my-2">Download</a>
             </div>
         <?php endforeach; ?>
     </div>
