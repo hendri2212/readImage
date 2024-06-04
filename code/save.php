@@ -1,12 +1,12 @@
 <?php
     session_start();
-    require 'vendor/autoload.php';
+    require '../vendor/autoload.php';
 
     use PhpOffice\PhpSpreadsheet\Spreadsheet;
     use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
     use PhpOffice\PhpSpreadsheet\IOFactory;
 
-    $fileName = 'data.xlsx';
+    $fileName = '../data.xlsx';
     $fileExists = file_exists($fileName);
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -43,7 +43,7 @@
         $writer = new Xlsx($spreadsheet);
         $writer->save($fileName);
 
-        header('Location: index.php');
+        header('Location: ../index.php');
 
         // echo "Form data has been saved to $fileName successfully.";
     } else {

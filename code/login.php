@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <title>Register Page</title>
     <style>
         .form-signin {
@@ -16,7 +16,7 @@
 </head>
 <body class="text-center">
     <?php
-        $config = parse_ini_file('config.ini', true);
+        $config = parse_ini_file('../config.ini', true);
     ?>
     <form action="save.php" method="POST" class="form-signin">
         <img class="mb-4" src="https://smkn1kotabaru.sch.id/media_library/images/c6ab60e235b679b8b7f9ac1743593c59.png">

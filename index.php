@@ -8,7 +8,7 @@
     // Cek session jika belum login
     session_start();
     if (!isset($_SESSION['phone'])) {
-        header('Location: login.php');
+        header('Location: code/login.php');
         exit;
     }
 ?>
