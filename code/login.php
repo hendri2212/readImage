@@ -19,7 +19,7 @@
         $config = parse_ini_file('../config.ini', true);
     ?>
     <form action="save.php" method="POST" class="form-signin">
-        <img class="mb-4" src="https://smkn1kotabaru.sch.id/media_library/images/c6ab60e235b679b8b7f9ac1743593c59.png">
+        <img class="mb-4 mt-5" src="../assets/logo.png" class="img-fluid" style="width: 25%">
         <h2 class="font-weight-bold"><font style="color:#343a40;">SMKN 1 Kotabaru</font></h2>
         <h6 class="font-weight-bold text-dark mb-4">SMK CERDAS (CERMAT TERAMPIL DISIPLIN IKHLAS)</h6>
 
