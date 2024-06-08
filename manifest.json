@@ -1,0 +1,11 @@
+{
+    "name": "readImage",
+    "short_name": "readImage",
+    "start_url": "login.php",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "App to read image",
+    "icons": [
+        { "src": "./assets/logo.png", "sizes": "48x48", "type": "image/png" }
+    ]
+  }  
