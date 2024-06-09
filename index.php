@@ -19,8 +19,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download Gambar Kalian</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
     <style>
         .frame {
             overflow: hidden;
@@ -66,7 +66,7 @@
             </div>
         </div>
     </div>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     <script>
         function showImageModal(imageUrl) {
             var previewImage = document.getElementById('previewImage');

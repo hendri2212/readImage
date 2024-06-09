@@ -10,7 +10,7 @@
         $data = "Name: $full_name\nWhatsapp: $phone\nSekolah: $school\n\n";
         
         // Specify the path to the text file
-        $file = '../data.txt';
+        $file = '../data/data.txt';
         
         // Open the file for appending
         $handle = fopen($file, 'a');
