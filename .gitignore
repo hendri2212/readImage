@@ -1,5 +1,4 @@
-data.xlsx
-data.txt
-/tmp/
-/gambar/
+/data/
 /vendor/
+/gambar/
+composer.lock

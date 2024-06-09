@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../assets/logo.png" />
+    <link rel="icon" href="../assets/icon/logo.png" />
     <link rel="manifest" href="../manifest.json" />
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <script src="../app.js"></script>
     <title>Register Page</title>
     <style>
@@ -22,7 +22,7 @@
         $config = parse_ini_file('../config.ini', true);
     ?>
     <form action="save_note.php" method="POST" class="form-signin">
-        <img class="mb-4 mt-5" src="../assets/logo.png" class="img-fluid" style="width: 25%">
+        <img class="mb-4 mt-5" src="../assets/icon/logo.png" class="img-fluid" style="width: 25%">
         <h2 class="font-weight-bold"><font style="color:#343a40;">SMKN 1 Kotabaru</font></h2>
         <h6 class="font-weight-bold text-dark mb-4">SMK CERDAS (CERMAT TERAMPIL DISIPLIN IKHLAS)</h6>
 

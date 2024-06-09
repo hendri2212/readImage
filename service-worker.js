@@ -2,10 +2,10 @@ const CACHE_NAME = 'readImage-cache-v1';
 const urlsToCache = [
   './',
   './code/login.php',
-  './assets/logo.png',
-  './css/bootstrap.min.css',
-  './js/bootstrap.min.js',
-  './js/jquery-3.7.1.min.js',
+  './assets/icon/logo.png',
+  './assets/css/bootstrap.min.css',
+  './assets/js/bootstrap.min.js',
+  './assets/js/jquery-3.7.1.min.js',
   'app.js',
   'manifest.json',
 ];
