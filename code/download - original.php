@@ -13,6 +13,7 @@
             header('Content-Disposition: attachment; filename=' . $basename);
             header('Expires: 0');
             header('Cache-Control: must-revalidate');
+            header('Accept-Encoding: gzip, deflate, br, identity, *, *;q=0,1');
             header('Pragma: public');
             header('Content-Length: ' . filesize($file));
             readfile($file);
