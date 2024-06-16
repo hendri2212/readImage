@@ -1,4 +1,7 @@
 /data/
 /vendor/
 /gambar/
+/backup_gambar/
+/watermark/
+/rename/
 composer.lock
