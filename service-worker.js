@@ -1,6 +1,7 @@
 const CACHE_NAME = 'readImage-cache-v1';
 const urlsToCache = [
   './',
+  './gambar/',
   './code/login.php',
   './assets/icon/logo.png',
   './assets/css/bootstrap.min.css',
