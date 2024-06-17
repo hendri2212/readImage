@@ -6,7 +6,9 @@
 </style>
 <h1>Selalu buka halaman ini untuk menjalankan convert otomatis</h1>
 <?php
-    header("Refresh: 30; url=/readImage/convert.php");
+    $config = parse_ini_file('config.ini', true);
+
+    header("Refresh: " . $config['app']['refresh'] . "; url=/readImage/convert.php");
 
     // Define paths to the directories
     $originalDir = 'gambar/original/';
