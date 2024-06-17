@@ -10,11 +10,9 @@
     header('Accept-Encoding: gzip, deflate, br, identity, *, *;q=0,1');
     // Directory containing the images
     $directory = 'gambar/thumbnail/';
-    $originalDirectory = 'gambar/original/';
 
     // Get all image files from the directory
     $images = glob($directory . '*.{jpg,JPG,jpeg,JPEG,png,gif}', GLOB_BRACE);
-    $originalImages = glob($originalDirectory . '*.{jpg,JPG,jpeg,JPEG,png,gif}', GLOB_BRACE);
 
     // Cek session jika belum login
     session_start();
@@ -56,15 +54,16 @@
     <div class="row px-2">
         <?php
             // Pagination variables
-            $perPage = 40; // Number of images per page
+            $perPage = 42; // Number of images per page
             $totalImages = count($images); // Total number of images
+
             $totalPages = ceil($totalImages / $perPage); // Total number of pages
 
             // Get the current page number
             $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
             $start = ($currentPage - 1) * $perPage;
-            $end = $start + $perPage;
-            $paginatedImages = array_slice($images, $start, $end);
+            $end = min($start + $perPage, $totalImages);
+            $paginatedImages = array_slice($images, $start, $end - $start);
 
             // Loop through the paginated images
             foreach ($paginatedImages as $image):
@@ -86,8 +85,8 @@
                         <a href="?page=1" class="page-link">First</a>
                     </li>
                     <!-- Previous Page Link -->
-                    <!-- <li class="page-item <?php if ($currentPage == 1) echo 'disabled'; ?>">
-                        <a href="?page=<?php echo $currentPage - 1; ?>" class="page-link">Prev</a>
+                    <!-- <li class="page-item <?php //if ($currentPage == 1) echo 'disabled'; ?>">
+                        <a href="?page=<?php //echo $currentPage - 1; ?>" class="page-link">Prev</a>
                     </li> -->
                     <?php for ($i = 1; $i <= $totalPages; $i++): ?>
                         <li class="page-item <?php if ($i == $currentPage) echo 'active'; ?>">
@@ -95,8 +94,8 @@
                         </li>
                     <?php endfor; ?>
                     <!-- Next Page Link -->
-                    <!-- <li class="page-item <?php if ($currentPage == $totalPages) echo 'disabled'; ?>">
-                        <a href="?page=<?php echo $currentPage + 1; ?>" class="page-link">Next</a>
+                    <!-- <li class="page-item <?php //if ($currentPage == $totalPages) echo 'disabled'; ?>">
+                        <a href="?page=<?php //echo $currentPage + 1; ?>" class="page-link">Next</a>
                     </li> -->
                     <!-- Last Page Link -->
                     <li class="page-item <?php if ($currentPage == $totalPages) echo 'disabled'; ?>">
