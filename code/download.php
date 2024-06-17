@@ -10,19 +10,18 @@
             // Add watermark to the image
             $watermark = imagecreatefrompng('../assets/icon/watermark.png'); // Replace with the actual path to your watermark image
             $image = imagecreatefromjpeg($file); // Assuming the file is a JPEG image, change the function accordingly for other image types
-            // $image = imagecreatefromjpeg('../watermark/DSC01400.jpg'); // Assuming the file is a JPEG image, change the function accordingly for other image types
 
             // Calculate the position to place the watermark
-            $imageWidth = imagesx($image);
-            $imageHeight = imagesy($image);
-            if ($imageWidth > $imageHeight) {
-                $image = imagerotate($image, 90, 0);
-            }
-            
             $watermarkWidth = imagesx($watermark);
             $watermarkHeight = imagesy($watermark);
             if ($watermarkWidth > $watermarkHeight) {
                 $watermark = imagerotate($watermark, 90, 0);
+            }
+            
+            $imageWidth = imagesx($image);
+            $imageHeight = imagesy($image);
+            if ($imageWidth > $imageHeight) {
+                $image = imagerotate($image, 90, 0);
             }
 
             $imageWidth = imagesx($image);
@@ -41,19 +40,18 @@
             imagecopy($image, $watermark, $positionX, $positionY, 0, 0, $watermarkWidth, $watermarkHeight);
 
             // Set headers to initiate file download
-            header('Content-Description: File Transfer');
+            // header('Content-Description: File Transfer');
             // header('Content-Type: application/octet-stream');
             header('Content-type: image/jpeg'); // Adjust for PNG or GIF
             header('Content-Disposition: attachment; filename=' . $basename);
-            header('Expires: 0');
-            header('Cache-Control: must-revalidate');
+            // header('Expires: 0');
+            // header('Cache-Control: must-revalidate');
             header('Accept-Encoding: gzip, deflate, br, identity, *, *;q=0,1');
-            header('Pragma: public');
+            // header('Pragma: public');
             header('Content-Length: ' . filesize($file));
 
             // Output the modified image
-            // imagejpeg('../hasil/' . $image, null, 100); // Change the output path and quality as needed
-            imagejpeg($image, null, 100); // Change the output path and quality as needed
+            imagejpeg($image, null, 80); // Change the output path and quality as needed
 
             // Clean up
             // imagedestroy($image);
