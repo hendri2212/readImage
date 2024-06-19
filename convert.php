@@ -1,14 +1,17 @@
-<style>
-    h1 {
-        text-align: center;
-        margin-top: 50px;
-    }
-</style>
-<h1>Selalu buka halaman ini untuk menjalankan convert otomatis</h1>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<div class="text-center">
+    <h1 class="mt-5">selalu buka halaman ini untuk menjalankan convert otomatis</h1>
+    <h2 class="text-danger fw-bold text-uppercase">don't close this page</h2>
+    <a href="index.php" target="_blank" class="btn btn-success mt-3">Dashboard</a>
+</div>
 <?php
     $config = parse_ini_file('config.ini', true);
-
-    header("Refresh: " . $config['app']['refresh'] . "; url=/readImage/convert.php");
+    
+    if ($_SERVER['HTTP_HOST'] == 'localhost') {
+        header("Refresh: " . $config['app']['refresh'] . "; url=/readImage/convert.php");
+    } else {
+        header("Refresh: " . $config['app']['refresh'] . "; url=/convert.php");
+    }
 
     // Define paths to the directories
     $originalDir = 'gambar/original/';

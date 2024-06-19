@@ -1,7 +1,8 @@
 /data/data.txt
 /data/data.xlsx
 /vendor/
-/gambar/
+/gambar/original/*.jpg
+/gambar/thumbnail/*.jpg
 /backup_gambar/
 /watermark/
 /rename/
